@@ -8,6 +8,26 @@ myDataBase::myDataBase()
 	pNode = NULL;	
 }
 
+
+myDataBase::~myDataBase()
+{       
+	deleteMyList(pNode);
+}
+
+
+void deleteMyList(node & temMyNode)
+{
+	node * tempNode = temMyNode;
+	delete temMyNode;
+
+	if(tempNode->Next)
+	{
+		deleteMyList(tempNode->Next);
+	}	
+	
+	return ;	
+}	
+
 void myDataBase::createDataBaseList()
 {
 	pNode = new node;
