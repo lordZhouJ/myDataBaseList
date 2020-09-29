@@ -1,5 +1,8 @@
 #include "myDataBase.h"
 
+/*
+ *在构造函数中对变量进行初始化
+ * */
 myDataBase::myDataBase()
 {	
 	pNode = NULL;	
@@ -15,7 +18,10 @@ void myDataBase::createDataBaseList()
 	return ;
 }
 
-
+/*
+ *对链表插入的学习和使用
+ *对c++的string的学习使用，目前对他只是简单的学习
+ * */
 bool myDataBase::InsertListDataTail(int data, std::string & name)
 {
 	node * subNode = new node;
@@ -68,6 +74,9 @@ void myDataBase::ShowDataBaseList()
 
 static  myDataBase *m_instance = NULL;
 
+/*
+ *是希望通过之中方式的调用，避免类没有创建而使用，造成的指针越界的困扰
+ * */
 myDataBase &myDataBase::GetInstance()
 {
 	if(m_instance == NULL)
