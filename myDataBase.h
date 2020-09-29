@@ -3,22 +3,31 @@
 
 #include <cstddef>//NULL 需要使用的头文件
 #include <iostream>
+#include <strings.h>
+using namespace std;
 
+//Data content
+class dataContent{
+	public:
+	       	int key;
+        	string name;
+};
 
 /*存储连表的class*/
 class node{
 	public:
 		//数据
-	     	int data;
+	     	dataContent data ;
+		//int data;
 		//指向下一个数据区的指针	
 	     	struct node *Next;
  };
 
-//Data content
+/*Data content
 class dataContent{
 	int key;
-		
-};
+	string name;	
+};*/
 
 
 /*对连表操作的class*/
@@ -33,7 +42,7 @@ class  myDataBase{
 		//show连表里面的数据
 		void ShowDataBaseList();
 		//数据的尾部插入操作
-		bool InsertListDataTail(int data); 
+		bool InsertListDataTail(int data, char &name); 
 		//获取类的句柄
 		static myDataBase& GetInstance();
 

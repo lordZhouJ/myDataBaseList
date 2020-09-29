@@ -1,7 +1,5 @@
 #include "myDataBase.h"
 
-using namespace std;
-
 myDataBase::myDataBase()
 {	
 	pNode = NULL;	
@@ -11,14 +9,14 @@ void myDataBase::createDataBaseList()
 {
 	pNode = new node;
 	
-	pNode->data=0;
+	pNode->data.key=0;
 	pNode->Next = NULL;
 
 	return ;
 }
 
 
-bool myDataBase::InsertListDataTail(int data)
+bool myDataBase::InsertListDataTail(int data, char& name)
 {
 	node * subNode = new node;
 	if(subNode == NULL)
@@ -28,7 +26,8 @@ bool myDataBase::InsertListDataTail(int data)
 		return false;
 	}	
 
-	subNode->data = data;
+	subNode->data.key = data;
+	subNode->data.name = name;
 	subNode->Next = NULL;
 
 	node *temNode = pNode;
@@ -59,7 +58,7 @@ void myDataBase::ShowDataBaseList()
 		}
 		else
 		{	
-			cout<<"listData: "<<tempNode->data<<endl;
+			cout<<"listData: "<<tempNode->data.key<<"\t name :"<<tempNode->data.name<<endl;
 		}
 	}while(tempNode->Next);
 
