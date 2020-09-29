@@ -23,12 +23,6 @@ class node{
 	     	struct node *Next;
  };
 
-/*Data content
-class dataContent{
-	int key;
-	string name;	
-};*/
-
 
 /*对连表操作的class*/
 class  myDataBase{
@@ -45,6 +39,8 @@ class  myDataBase{
 		bool InsertListDataTail(int data,std::string & name); 
 		//获取类的句柄
 		static myDataBase& GetInstance();
+		// 删除链表
+		void deleteMyList(node * temMyNode);
 
 	private:
 		//定义了头节点

@@ -8,17 +8,18 @@ myDataBase::myDataBase()
 	pNode = NULL;	
 }
 
-
+//析构函数的使用
 myDataBase::~myDataBase()
 {       
 	deleteMyList(pNode);
 }
 
 
-void deleteMyList(node & temMyNode)
+//删除链表每一个节点
+void myDataBase::deleteMyList(node * MyNode)
 {
-	node * tempNode = temMyNode;
-	delete temMyNode;
+	node * tempNode = MyNode;
+	delete MyNode;
 
 	if(tempNode->Next)
 	{
