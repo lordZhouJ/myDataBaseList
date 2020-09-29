@@ -58,7 +58,7 @@ void myDataBase::ShowDataBaseList()
 		}
 		else
 		{	
-			cout<<"listData: "<<tempNode->data.key<<"\t name :"<<tempNode->data.name<<endl;
+			cout<<"key: "<<tempNode->data.key<<"\t name :"<<tempNode->data.name<<endl;
 		}
 	}while(tempNode->Next);
 
