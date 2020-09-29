@@ -13,7 +13,7 @@ int  main()
 	for(i=0;i<10 ; ++i)
 	{
 		//string str = "me";	
-		 myDataBase::GetInstance().InsertListDataTail(i,str[0]);
+		 myDataBase::GetInstance().InsertListDataTail(i,str);
 	}	
 	myDataBase::GetInstance().ShowDataBaseList();
 	

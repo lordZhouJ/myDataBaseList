@@ -16,7 +16,7 @@ void myDataBase::createDataBaseList()
 }
 
 
-bool myDataBase::InsertListDataTail(int data, char& name)
+bool myDataBase::InsertListDataTail(int data, std::string & name)
 {
 	node * subNode = new node;
 	if(subNode == NULL)

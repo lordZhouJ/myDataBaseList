@@ -42,7 +42,7 @@ class  myDataBase{
 		//show连表里面的数据
 		void ShowDataBaseList();
 		//数据的尾部插入操作
-		bool InsertListDataTail(int data, char &name); 
+		bool InsertListDataTail(int data,std::string & name); 
 		//获取类的句柄
 		static myDataBase& GetInstance();
 
