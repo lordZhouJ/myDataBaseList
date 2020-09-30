@@ -37,11 +37,13 @@ class  myDataBase{
 		void ShowDataBaseList();
 		//数据的尾部插入操作
 		bool InsertListDataTail(int data,std::string & name); 
+		//按照key值大小，顺序插入
+		bool InsertListDataOrder(int data, std::string &name, bool bigtosmall);
 		//获取类的句柄
 		static myDataBase& GetInstance();
 		// 删除链表
 		void deleteMyList(node * temMyNode);
-
+		
 	private:
 		//定义了头节点
 		node *pNode;

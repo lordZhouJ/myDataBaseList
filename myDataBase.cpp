@@ -69,6 +69,73 @@ bool myDataBase::InsertListDataTail(int data, std::string & name)
 	return true;
 }
 
+//按照key值大小，顺序插入
+bool myDataBase::InsertListDataOrder(int data, std::string &name, bool bigtosmall)
+{
+	node * subNode = new node;
+	if(subNode == NULL)
+        {
+                cout<< "subNode create error!"<<endl;
+
+                return false;
+        }
+	
+	subNode->data.key = data;
+        subNode->data.name = name;
+        subNode->Next = NULL;
+	
+	node * tempNode = pNode;
+        node * tempNodeNext = pNode->Next;
+/*
+	if(!tempNodeNext)
+	{
+		InsertListDataTail(data,name);
+	}	
+	else
+*/	{
+		//cout << "where has  error ?"<<endl;	
+		if(bigtosmall)
+		{
+			while( tempNodeNext->data.key <  subNode->data.key)
+			{
+				cout << "where has  error ?"<<endl;
+				tempNode = tempNode->Next;
+				tempNodeNext = tempNodeNext->Next;
+				if(! tempNodeNext)
+				{
+					tempNode->Next = subNode;
+			                subNode->Next = NULL;
+					return true;
+					//break;
+				}	
+			}
+		}
+		else
+		{
+			while( tempNodeNext->data.key >  subNode->data.key)
+                	{
+                        	tempNodeNext = tempNodeNext->Next;
+                        	tempNode = tempNode->Next;
+                	}
+		}
+		cout << "where has  error ?"<<endl;
+
+		tempNode->Next = subNode;
+		 if(! tempNodeNext)
+                 {
+	                //  tempNode->Next = subNode;
+        	          subNode->Next = NULL;
+                	  //return true;
+                  	//break;
+                 }
+		 else
+		{
+			subNode->Next = tempNodeNext->Next;
+		}	
+	}
+	
+	return true ;
+}
 
 void myDataBase::ShowDataBaseList()
 {

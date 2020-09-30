@@ -8,7 +8,9 @@ int  main()
 	{
 		string str;
 		cin >> str;	
-		myDataBase::GetInstance().InsertListDataTail(i,str);
+		//myDataBase::GetInstance().InsertListDataTail(i,str);
+		myDataBase::GetInstance().InsertListDataOrder(i, str, true);
+
 	}	
 	myDataBase::GetInstance().ShowDataBaseList();
 	
